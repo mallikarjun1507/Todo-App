@@ -4,7 +4,7 @@ const db = require('../config/db');
 exports.createTodo = (req, res) => {
   const { title } = req.body;
   if (!title) return res.status(400).json({ error: 'Title is required' });
-
+  console.log("kjajkhasjkdhkjsdhkasd")
   db.query('INSERT INTO todos (title, completed) VALUES (?, ?)', [title, false], (err, result) => {
     if (err) return res.status(500).json({ error: err.message });
 
